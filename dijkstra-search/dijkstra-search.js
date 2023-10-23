@@ -1,11 +1,9 @@
-import getLowerNode from "./lowerNode"
+import getLowerNode from "./lowerNode.js"
 
 export default function dijkstra(options) {
     const graph = options.graph
-    const start = options.start
-    const end = options.end
+    const costsDict = options.costs
 
-    const costsDict = {}
     const parentsDicts  = {}
     const processedCosts = {}
 
@@ -26,5 +24,10 @@ export default function dijkstra(options) {
         }
 
         node = getLowerNode(costsDict, processedCosts)
+    }
+
+    return {
+        "parents": parentsDicts,
+        "costs": costsDict
     }
 }
