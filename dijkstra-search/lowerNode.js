@@ -1,9 +1,9 @@
 export default function getLowerNode(costsNodes, processedCosts) {
-    lowerCost = Infinity
-    lowerNode = null
+    var lowerCost = Infinity
+    var lowerNode = null
 
     for (const node in costsNodes)  {
-        cost = costsNodes[node]
+        var cost = costsNodes[node]
         if ((cost < lowerCost) && processedCosts[node] == false) {
             lowerCost = cost
             lowerNode = node
